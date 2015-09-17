@@ -16,6 +16,20 @@ buildscript {
         classpath 'net.wasdev.wlp.gradle.plugins:liberty-gradle-plugin:1.0-SNAPSHOT'
     }
 }
+repositories {
+    mavenCentral()
+    maven {
+        name = 'Sonatype Nexus Snapshots'
+        url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+}
+
+dependencies {
+        compile 'javax.ws.rs:javax.ws.rs-api:2.0'
+        compile 'javax.validation:validation-api:1.1.0.Final'
+        compile 'javax.enterprise:cdi-api:1.2'
+        compile 'com.sun.faces:jsf-api:2.2.12'
+}
 
 liberty {
     wlpDir = "wlp"
