@@ -14,15 +14,6 @@ buildscript {
     }
     dependencies {
         classpath 'net.wasdev.wlp.gradle.plugins:liberty-gradle-plugin:1.0-SNAPSHOT'
-        if (project.hasProperty("waslpDir")) {
-            def wasJarPath = "${waslpDir}/bin/tools/ws-server.jar"
-            def wasJarFile = new File(wasJarPath)
-            if(wasJarFile.exists()) {
-                classpath files(wasJarPath)
-            }
-        }
-
-        compile fileTree(dir: 'wlp/lib/', include: '*.jar')
     }
 }
 
